@@ -23,11 +23,6 @@ Constraints:
 """
 
 def sortArrayByParity(nums):
-    """
-    :type nums: List[int]
-    :rtype: List[int]
-    """
-
     left = 0
     right = len(nums) - 1
 
@@ -35,14 +30,13 @@ def sortArrayByParity(nums):
 
         if nums[left] % 2 == 0:
             left += 1
-            continue
+
         elif nums[left] % 2 != 0 and nums[right] % 2 == 0:
             swap = nums[left]
             nums[left] = nums[right]
             nums[right] = swap
             right -= 1
             left += 1
-            continue
         else:
             right -= 1
     return nums
