@@ -85,6 +85,25 @@ def findMaxConsecutiveOnes(nums):
 
     return max
 
+def findMaxConsecutiveOnes(nums):
+    """
+    :type nums: List[int]
+    :rtype: int
+    """
+    count = 0
+    maximum = 0
+
+    for i in range(len(nums)):
+
+        if nums[i] == 1:
+            count += 1
+        else:
+            maximum = count
+            count = 0
+
+    return max(maximum, count)
+
+
 if __name__ == "__main__":
     #nums = [1, 0, 1, 1, 0, 1]
     nums = [1, 1, 0, 1, 1, 1]
